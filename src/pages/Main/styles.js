@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {darken} from 'polished';
 
 export const Container = styled.View`
   background: #000;
@@ -21,7 +22,7 @@ export const CardProduct = styled.View`
   height: 400px;
   margin-left: 30px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 12px;
 `;
 
 export const ProductImage = styled.Image`
@@ -46,22 +47,36 @@ export const ProductPrice = styled.Text`
 
 export const PoductAddToCart = styled.TouchableOpacity`
   flex-direction: row;
-  background: #7159c1;
   align-items: center;
+  background: #7159c1;
   border-radius: 4px;
   margin-top: auto;
 `;
 
 export const ProductAmount = styled.View`
-  flex: 1;
-  justify-content: space-between;
+  border-radius: 4px;
+  flex-direction: row;
+  align-items: center;
   padding: 12px;
+  background: ${darken(0.03, '#7159c1')};
 `;
 
-export const ProductAmountText = styled.Text``;
+export const Svg = styled.Text`
+  margin-right: 5px;
+`;
+
+export const ProductAmountText = styled.Text`
+  color: #fff;
+  font-weight: bold;
+`;
 
 export const TextAddToCart = styled.Text`
+  flex: 1;
   flex-direction: row;
+  align-items: center;
+  font-size: 14px;
   color: #fff;
-  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
 `;

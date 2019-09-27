@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Image, Text} from 'react-native';
 import api from '../../services/api';
+import {formatPrice} from '../../until/format';
 
 import {
   Container,
@@ -14,6 +15,7 @@ import {
   TextAddToCart,
   ProductAmount,
   ProductAmountText,
+  Svg,
 } from './styles';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -27,6 +29,7 @@ export default class Main extends Component {
     const response = await api.get('products');
     const data = response.data.map(product => ({
       ...product,
+      priceFormatted: formatPrice(product.price),
     }));
 
     this.setState({products: data});
@@ -46,13 +49,13 @@ export default class Main extends Component {
               <ProductImage source={{uri: item.image}} />
               <ProductInfo>
                 <ProductTitle numberOfLines={2}>{item.title}</ProductTitle>
-                <ProductPrice>{item.price}</ProductPrice>
+                <ProductPrice>{item.priceFormatted}</ProductPrice>
               </ProductInfo>
               <PoductAddToCart onPress={() => {}}>
                 <ProductAmount>
-                  <Text>
+                  <Svg>
                     <Icon name="add-shopping-cart" color="#FFF" size={20} />{' '}
-                  </Text>
+                  </Svg>
                   <ProductAmountText>{amount || 0}</ProductAmountText>
                 </ProductAmount>
                 <TextAddToCart>Adicionar</TextAddToCart>

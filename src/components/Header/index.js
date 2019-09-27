@@ -1,13 +1,16 @@
 import React from 'react';
 
-import {Container, Logo, AreaCart, ItenQtd} from './styles';
+import {Container, Logo, AreaCart, AreaHome, ItenQtd} from './styles';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Header({navigation}) {
   return (
     <Container>
-      <Logo />
+      <AreaHome onPress={() => navigation.navigate('Main')}>
+        <Logo />
+      </AreaHome>
+
       <AreaCart
         onPress={() => {
           navigation.navigate('Cart');

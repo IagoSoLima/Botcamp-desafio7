@@ -10,6 +10,8 @@ export const Container = styled.View`
   align-items: center;
 `;
 
+export const AreaHome = styled.TouchableOpacity``;
+
 export const Logo = styled.Image.attrs({
   source: logo,
   rizeMode: 'cover',
