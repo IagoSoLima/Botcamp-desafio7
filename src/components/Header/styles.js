@@ -3,8 +3,7 @@ import logo from '../../assets/logo.png';
 
 export const Container = styled.View`
   background: #000;
-
-  padding: 28px;
+  padding: 50px 28px 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

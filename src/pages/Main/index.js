@@ -18,7 +18,7 @@ import {
   Svg,
 } from './styles';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class Main extends Component {
   state = {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {darken} from 'polished';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   background: #000;
   display: flex;
   flex: 1;
